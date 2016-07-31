@@ -11,7 +11,7 @@ This project makes code generation a web service. This has a variety of advantag
 - The internal system can change, to be optimized or made faster for example, but the API stays the same.
 - Benefits very large models depicting a complex system, as computing in the cloud can have increased processing power and resources over a local machine.
 
-### How it works
+## How it works
 
 The web service allows users to publish [Epsilon](http://www.eclipse.org/epsilon/) code generators and execute them online. Generators are publicly available so anyone can use them on their own models. A user uploads their models to be processed and receives the output files produced by their chosen generator.
 
