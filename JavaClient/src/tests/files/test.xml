@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Person" access="public">
+  <property name="name" type="String" access="public"></property>
+  <property name="age" type="int" access="public"></property>
+  <property name="address" type="String" access="private"></property>
+</class>

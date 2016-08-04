@@ -107,7 +107,7 @@ public class ClientTests
 	@Test
 	public void testGetGenerator()
 	{
-		GenResponse res = generatorService.getGenerator("robcrocombe", "pacs-emf-gen");
+		GenResponse res = generatorService.getGenerator("robcrocombe", "cgs-java-gen");
 
 		if (res.status == 200)
 		{
@@ -130,7 +130,7 @@ public class ClientTests
 	@Test
 	public void testPostGenerator()
 	{
-		int status = generatorService.postGenerator("robcrocombe", "pacs-emf-gen");
+		int status = generatorService.postGenerator("robcrocombe", "cgs-java-gen");
 
 		assertEquals("POST /generators", 201, status);
 	}
@@ -138,19 +138,19 @@ public class ClientTests
 	@Test
 	public void testPostFile() throws Exception
 	{
-		String modelPath = this.getClass().getResource("files/test.model").getPath();
+		String modelPath = this.getClass().getResource("files/test.xml").getPath();
 
 		ArrayList<Property> properties = new ArrayList<Property>();
 		properties.add(new Property("model", modelPath));
 
-		GenResponse response = generatorService.getGenerator("robcrocombe", "pacs-emf-gen");
+		GenResponse response = generatorService.getGenerator("robcrocombe", "cgs-java-gen");
 
 		if (response.status != 200)
 		{
 			fail("GET /generator failed");
 		}
 
-		String jobID = jobService.postJob(response.gen.properties, properties, "robcrocombe", "pacs-emf-gen");
+		String jobID = jobService.postJob(response.gen.properties, properties, "robcrocombe", "cgs-java-gen");
 		assertNotEquals("POST /job", null, jobID);
 	}
 }

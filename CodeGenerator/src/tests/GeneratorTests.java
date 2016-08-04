@@ -31,7 +31,7 @@ public class GeneratorTests
 	public void publishEMFTest() throws Exception
 	{
 		Generators genService = new Generators();
-		Response response = genService.post("robcrocombe", "pacs-emf-gen");
+		Response response = genService.post("robcrocombe", "cgs-emf-gen");
 
 		if (response.getEntity() != null)
 		{
@@ -39,12 +39,12 @@ public class GeneratorTests
 		}
 		assertEquals(201, response.getStatus());
 	}
-	
+
 	@Test
 	public void jobWithEmfTest() throws Exception
 	{
 		URI testFilePath = this.getClass().getResource("test.model").toURI();
-		File generatedZip = simulateJobPost(testFilePath, "robcrocombe", "pacs-emf-gen");
+		File generatedZip = simulateJobPost(testFilePath, "robcrocombe", "cgs-emf-gen");
 
 		assertTrue(generatedZip.exists());
 	}
