@@ -54,3 +54,9 @@ public class Person {
 You can see the generator has made a basic starting point for adding to this class, including a public getter for the private `address` variable I set.
 
 This is a very basic example, but the Code Generation Service can handle any generator created for the [Epsilon](http://www.eclipse.org/epsilon/) MDE framework. You can see more examples on my [GitHub](https://github.com/search?q=user%3Arobcrocombe+pacs) that transform EMF models to HTML pages.
+
+## Future Work
+
+This project was developed for a masters of Computer Science dissertation under a strict deadline and should be treated as a working prototype. There may be issues with the way the network code was written as it was my first time developing a RESTful API. There are definitely security issues as there is nothing to stop generators running any code via Ant.
+
+Generator publishing/usage doesn't support private GitHub repositories yet. This would be a nice improvement to prevent anyone from using a generator or re-publishing it.
