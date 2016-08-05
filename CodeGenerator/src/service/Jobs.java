@@ -180,7 +180,7 @@ public class Jobs
 				}
 				else if (JobManager.inst.getJobState(id) == JobState.Cancelled)
 				{
-					return new Error("The job has already been cancelled").build(Status.NOT_MODIFIED);
+					return Response.status(Status.NOT_MODIFIED).build();
 				}
 				else
 				{
