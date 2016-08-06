@@ -15,10 +15,10 @@ This project makes code generation a web service. This has a variety of advantag
 
 The web service allows users to publish [Epsilon](http://www.eclipse.org/epsilon/) code generators and execute them online. Generators are publicly available so anyone can use them on their own models. A user uploads their models to be processed and receives the output files produced by their chosen generator.
 
-Here's an example, converting XML to a Java class. I publish the generator `pacs-java-gen` (which you can find on [GitHub](https://github.com/robcrocombe/pacs-java-gen/)) to the service. Using the CLI client it's as easy as:
+Here's an example, converting XML to a Java class. I publish the generator `cgs-java-gen` (which you can find on [GitHub](https://github.com/robcrocombe/cgs-java-gen/)) to the service. Using the CLI client it's as easy as:
 
 ```
-> codegen publish robcrocombe/pacs-java-gen
+> codegen publish robcrocombe/cgs-java-gen
 ```
 
 XML is a language that can represent a model. Here is an example model of a simple `Person` class:
@@ -34,7 +34,7 @@ XML is a language that can represent a model. Here is an example model of a simp
 The model can be sent to the service to be generated into a Java class. Here is how it would be done with the CLI client:
 
 ```
-> codegen run robcrocombe/pacs-java-gen model="person.xml"
+> codegen run robcrocombe/cgs-java-gen model="person.xml"
 ```
 
 The `model` parameter specifies the XML file to use. Once the generator completes, it returns a Zip of our output - the `person.java` file:
@@ -53,7 +53,7 @@ public class Person {
 
 You can see the generator has made a basic starting point for adding to this class, including a public getter for the private `address` variable I set.
 
-This is a very basic example, but the Code Generation Service can handle any generator created for the [Epsilon](http://www.eclipse.org/epsilon/) MDE framework. You can see more examples on my [GitHub](https://github.com/search?q=user%3Arobcrocombe+pacs) that transform EMF models to HTML pages.
+This is a very basic example, but the Code Generation Service can handle any generator created for the [Epsilon](http://www.eclipse.org/epsilon/) MDE framework. You can see more examples on my [GitHub](https://github.com/search?q=user%3Arobcrocombe+cgs) that transform EMF models to HTML pages.
 
 ## Future Work
 
