@@ -18,7 +18,7 @@ The web service allows users to publish [Epsilon](http://www.eclipse.org/epsilon
 Here's an example, converting XML to a Java class. I publish the generator `pacs-java-gen` (which you can find on [GitHub](https://github.com/robcrocombe/pacs-java-gen/)) to the service. Using the CLI client it's as easy as:
 
 ```
-codegen publish robcrocombe/pacs-java-gen
+> codegen publish robcrocombe/pacs-java-gen
 ```
 
 XML is a language that can represent a model. Here is an example model of a simple `Person` class:
@@ -34,7 +34,7 @@ XML is a language that can represent a model. Here is an example model of a simp
 The model can be sent to the service to be generated into a Java class. Here is how it would be done with the CLI client:
 
 ```
-codegen run robcrocombe/pacs-java-gen model="person.xml"
+> codegen run robcrocombe/pacs-java-gen model="person.xml"
 ```
 
 The `model` parameter specifies the XML file to use. Once the generator completes, it returns a Zip of our output - the `person.java` file:
@@ -57,6 +57,6 @@ This is a very basic example, but the Code Generation Service can handle any gen
 
 ## Future Work
 
-This project was developed for a masters of Computer Science dissertation under a strict deadline and should be treated as a working prototype. There may be issues with the way the network code was written as it was my first time developing a RESTful API. There are definitely security issues as there is nothing to stop generators running any code via Ant.
+This project was developed for a masters of Computer Science dissertation under a strict deadline and should be treated as a working prototype. There may be issues with the way the network code was written as it was my first time developing a RESTful API. There are definitely security issues as there is nothing to stop generators running any code via Ant. Job IDs are also sequential, so it would be trivial to access other users' running jobs.
 
 Generator publishing/usage doesn't support private GitHub repositories yet. This would be a nice improvement to prevent anyone from using a generator or re-publishing it.
