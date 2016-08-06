@@ -2,7 +2,7 @@
 
 Model-driven engineering (MDE) is a software engineering paradigm that focuses on modelling systems during development with the effect of increasing thoughtful design and reducing accidental complexity. Models help design software before it is implemented, representing systems as common data structures.
 
-MDE tools, such as code generators (also called model-to-text transformations) can support the transition from working with models to working with code. Text generated from a model can act as a base to develop on, present statistics, or provide documentation, for example.
+MDE tools, such as model-to-text transformers can support the transition from working with models to working with code. Text generated from a model can act as a base to develop on, present statistics, or provide documentation, for example.
 
 This project makes code generation a web service. This has a variety of advantages over traditional methods, such as:
 
