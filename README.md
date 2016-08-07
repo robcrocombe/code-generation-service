@@ -57,6 +57,6 @@ This is a very basic example, but the Code Generation Service can handle any gen
 
 ## Future Work
 
-This project was developed for a masters of Computer Science dissertation under a strict deadline and should be treated as a working prototype. There may be issues with the way the network code was written as it was my first time developing a RESTful API. There are definitely security issues as there is nothing to stop generators running any code via Ant. Job IDs are also sequential, so it would be trivial to access other users' running jobs.
+This project was developed for a masters of Computer Science dissertation under a strict deadline and should be treated as a working prototype. There may be issues with the way the network code was written as it was my first time developing a RESTful API. There are definitely security issues as there is nothing to stop generators running any code via Ant. Also, Job IDs are sequential, so it would be trivial to access other users' running jobs.
 
 Generator publishing/usage doesn't support private GitHub repositories yet. This would be a nice improvement to prevent anyone from using a generator or re-publishing it.
