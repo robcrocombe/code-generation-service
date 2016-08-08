@@ -55,6 +55,16 @@ You can see the generator has made a basic starting point for adding to this cla
 
 This is a very basic example, but the Code Generation Service can handle any generator created for the [Epsilon](http://www.eclipse.org/epsilon/) MDE framework. You can see more examples on my [GitHub](https://github.com/search?q=user%3Arobcrocombe+cgs) that transform EMF models to HTML pages.
 
+## Documentation
+
+The [GitHub wiki](https://github.com/robcrocombe/code-generation-service/wiki) contains information on:
+
+- How to set up the project locally in Eclipse.
+- How to use the CLI client.
+- How to write and publish a code generator.
+
+Documentation on the web service API is available as an HTML page in the `documentation` folder of this repository.
+
 ## Future Work
 
 This project was developed for a masters of Computer Science dissertation under a strict deadline and should be treated as a working prototype. There may be issues with the way the network code was written as it was my first time developing a RESTful API. There are definitely security issues as there is nothing to stop generators running any code via Ant. Also, Job IDs are sequential, so it would be trivial to access other users' running jobs.
