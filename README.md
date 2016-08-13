@@ -13,6 +13,39 @@ This project makes code generation a web service. This has a variety of advantag
 
 ## How it works
 
+Here is an overview showing how the systems are designed to interact:
+
+![System Overview](https://robcrocombe.files.wordpress.com/2016/08/pacs_systemoverview.png)
+
+Here is a closer look at how the web service was designed. The subsystems of the service have been separated into two distinct packages based on their logical grouping in the system.
+
+![System Architecture](https://robcrocombe.files.wordpress.com/2016/08/pacs_systemarchitecture.png)
+
+Each box in the first two containers/packages are classes containing some functionality of the overall system. The last container shows the file system the service will store permanent data on. It is split into two directories, one for generators and one for jobs. Each generator repository or job will be given their own directory inside these containers so that files are not misplaced. A job directory will contain the job’s generated output.
+
+The arrows between classes show the relationship between them. For example, the job ID generator’s functions are used exclusively by the job endpoints class.
+
+Below are brief explanations of the main classes’ functionality, and their role in the system:
+
+- **Generator Endpoints** is where all API endpoints relating to publishing generators and getting their details will be located.
+
+- **Ant Build Manager** will analyse Ant build files and return their details (such as name and properties).
+
+- **Generator Manager** keeps track of the generators available on the service and will update the list of generators (stored in a JSON file) when a generator is added or updated.
+
+- **Git Manager** functions as an interface with GitHub, allowing the program to clone, pull, and delete Git repositories.
+
+- **Job Endpoints** is where all API endpoints relating to submitting and status checking jobs will be located.
+
+- **Job ID Generator** will create a unique ID for each job to use in directory names and API queries.
+
+- **Job Manager** will manage the creation and interfacing of jobs in the system. Ant Runner contains all functions for processing a single job programmatic-
+ally, from Ant setup, to generator execution and error handling.
+
+- **File Manager** interfaces between the service and the file system, setting up job folders and writing model files, for example.
+
+## How to use it
+
 The web service allows users to publish [Epsilon](http://www.eclipse.org/epsilon/) code generators and execute them online. Generators are publicly available so anyone can use them on their own models. A user uploads their models to be processed and receives the output files produced by their chosen generator.
 
 Here's an example, converting XML to a Java class. I publish the generator `cgs-java-gen` (which you can find on [GitHub](https://github.com/robcrocombe/cgs-java-gen/)) to the service. Using the CLI client it's as easy as:
